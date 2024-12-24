@@ -1,7 +1,7 @@
-public class Formateurs extends Personne {
+public class Formateur extends Personne {
   double salaire;
    String specialite;
-    public Formateurs(int id, String nom, String prenom, String email, Classes classe){
+    public Formateur(int id, String nom, String prenom, String email, Classe classe){
         super (id, nom, prenom, email);
         this.salaire = salaire;
         this.specialite = specialite;

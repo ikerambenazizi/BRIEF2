@@ -1,34 +1,46 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
+
 public class application {
-    static void Menu(){
-        System.out.println("******MENU******");
-        System.out.println("1-pour Remplir");
-        System.out.println("2-pour afficher");
-        System.out.println("Saisissez votre choix: ");
+
+
+    public static void main(String[] args) {
+        ArrayList<Apprenant> apprenants = new ArrayList<>();
+        ArrayList<Classe> classes = new ArrayList<>();
+        Apprenant apprenant = new Apprenant();
+        Classe classe = new Classe();
+        Scanner sc = new Scanner(System.in);
+        int choix;
+        do {
+            System.out.println("1-Gestion Apprenants");
+            System.out.println("2-Gestion Formateurs");
+            System.out.println("3-Gestion Classes");
+            System.out.println("4-Quitter");
+            Scanner scanner = new Scanner(System.in);
+
+
+            System.out.println("Entrer votre choix :");
+            choix = scanner.nextInt();
+            switch (choix) {
+                case 1:
+                    apprenant.gestionApprenants(apprenants, classes);
+                    break;
+                case 2:
+                    break;
+
+
+                case 3:
+                    classe.GestionClasse(classes);
+                    break;
+                case 4:
+                    System.out.println("Au revoir ^-^ :");
+                    break;
+                default:
+                    System.out.println("choix invalide");
+            }
+        } while (choix != 4);
     }
-    public static  void main(String[] args) {
-
-            int choix = 0;
-            Scanner cs =new Scanner(System.in);
-            do{
-               Menu();
-
-                choix = cs.nextInt();
-                cs.nextLine();
-                switch(choix){
-                    case 1:
-                        System.out.println("Saisissez le nom : ");
-                        String nom = cs.nextLine();
-                        System.out.println("Saisissez le prenom : ");
-                        String prenom = cs.nextLine();
-                        System.out.println("Saisissez l'e-mail (exemple@gmail.com) : ");
-                        String email = cs.nextLine();
-                        System.out.println("Saisissez l'ID (des nombres entiers) : ");
-                        int id = cs.nextInt();
-                }
-            }while( choix != 2);
-
-        }
-    }
+}
